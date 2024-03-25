@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список студентов</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <div class="students">
+    <div class="container">
+      <h1 class="students__title text-center py-3">Список студентов</h1>
+      <form class="students__form input-group flex-column">
+        <label for="surname" class="students__label">
+          Фамилия: <span class="error surname"></span>
+          <input id="surname" type="text" class="students__input students__input-add form-control" required>
+        </label>
+        <label for="name" class="students__label">
+          Имя: <span class="error name"></span>
+          <input id="name" type="text" class="students__input students__input-add form-control" required>
+        </label>
+        <label for="fathername" class="students__label">
+          Отчество: <span class="error fathername"></span>
+          <input id="fathername" type="text" class="students__input students__input-add form-control" required>
+        </label>
+        <label for="birth" class="students__label">
+          Дата рождения: <span class="error birth"></span>
+          <input id="birth" type="date" min="1900-01-01" class="students__input students__input-add form-control" required>
+        </label>
+        <label for="start" class="students__label">
+          Год начала обучения: <span class="error start"></span>
+          <input id="start" type="number" min="2000" class="students__input students__input-add form-control" required>
+        </label>
+        <label for="faculty" class="students__label">
+          Факультет: <span class="error faculty"></span>
+          <input id="faculty" type="text" class="students__input students__input-add form-control" required>
+        </label>
+        <button type="submit" class="students__add btn btn-success rounded">Добавить</button>
+      </form>
+      <h2 class="students__subtitle">
+        Фильтры
+      </h2>
+      <form class="students__filter input-group d-flex align-items-end mb-2">
+        <label for="fullname-filter" class="students__label m-1">
+          ФИО:
+          <input id="fullname-filter" type="text" class="students__input students__input-filter students__input-fullname form-control">
+        </label>
+        <label for="faculty-filter" class="students__label m-1">
+          Факультет:
+          <input id="faculty-filter" type="text" class="students__input students__input-filter students__input-faculty form-control">
+        </label>
+        <label for="start-filter" class="students__label m-1">
+          Год начала обучения:
+          <input id="start-filter" type="number" class="students__input students__input-filter students__input-start form-control">
+        </label>
+        <label for="end-filter" class="students__label m-1">
+          Год завершения обучения:
+          <input id="end-filter" type="number" class="students__input students__input-filter form-control students__input-end">
+        </label>
+        <button type="submit" class="students__confirm btn btn-success rounded h-auto m-1">Применить</button>
+        <button type="submit" class="students__reset btn btn-danger rounded h-auto m-1">Сбросить</button>
+      </form>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="sort surname">ФИО</th>
+            <th class="sort faculty">Факультет</th>
+            <th class="sort birthday">Дата рождения и возраст</th>
+            <th class="sort studyStart">Годы обучения</th>
+          </tr>
+        </thead>
+        <tbody class="students__elements"></tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
